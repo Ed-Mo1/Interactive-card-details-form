@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <title>Frontend Mentor | Interactive card details form</title>
+    <link rel="stylesheet" href="./src/bootstrap.min.css" />
+    <link rel="stylesheet" href="./src/index.css" />
+    <style>
+      .attribution {
+        font-size: 14px;
+        text-align: center;
+      }
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+    </style>
+  </head>
+  <body>
+    <main
+      class="row row-cols-1 row-cols-md-2 justify-content-md-center align-items-start align-items-md-center"
+    >
+      <aside id="cards">
+        <div class="card mx-auto ms-md-auto front-card border-0">
+          <img src="./images/bg-card-front.png" class="img-fluid" />
+          <div class="card-img-overlay">
+            <div class="card-body text-light">
+              <img
+                src="./images/card-logo.svg"
+                alt=""
+                style="width: fit-content"
+                srcset=""
+              />
+              <div id="card-number" class="d-flex justify-content-between">
+                <span id="first-four">0000</span>
+                <span id="seconde-four">0000</span>
+                <span id="third-four">0000</span>
+                <span id="fourth-four">0000</span>
+              </div>
+              <div
+                id="card-details"
+                class="d-flex justify-content-between align-items-center"
+              >
+                <h6 id="card-owner">Jane Appleseed</h6>
+                <h6 id="card-expired">
+                  <span id="month">00</span>/<span id="year">00</span>
+                </h6>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card mx-auto ms-md-auto back-card border-0">
+          <img src="./images/bg-card-back.png" class="img-fluid" />
+          <div class="card-img-overlay">
+            <div id="security-code">000</div>
+          </div>
+        </div>
+      </aside>
+      <section
+        id="card-form"
+        class="d-flex justify-content-center mt-5 mt-md-0"
+      >
+        <form
+          action="./success.html"
+          method="get"
+          class="d-flex flex-column gap-4"
+        >
+          <div class="form-group position-relative">
+            <label for="name" class="form-label">Cardholder Name</label>
+            <input
+              type="text"
+              id="name"
+              name="card-owner"
+              placeholder="e.g. Jane Appleseed"
+              class="form-control form-control-lg"
+            />
+          </div>
+          <div class="form-group position-relative">
+            <label for="account-num" class="form-label">Card Number</label>
+            <input
+              type="text"
+              name="card-num"
+              maxlength="19"
+              minlength="19"
+              id="account-num"
+              placeholder="e.g. 1234 5678 9123 0000"
+              class="form-control form-control-lg"
+            />
+          </div>
+          <div id="cvc-mmyy" class="d-flex align-items-end gap-3">
+            <div class="form-group position-relative">
+              <label class="form-label" for="mm">Exp. Date (MM/YY)</label>
+
+              <input
+                type="text"
+                placeholder="MM"
+                name="month-exp"
+                id="mm"
+                class="form-control form-control-lg rounded"
+                minlength="2"
+                maxlength="2"
+              />
+            </div>
+            <div class="form-group position-relative">
+              <input
+                type="text"
+                id="yy"
+                name="year-exp"
+                placeholder="YY"
+                for="sec-code"
+                class="form-control form-control-lg rounded"
+                minlength="2"
+                maxlength="2"
+              />
+            </div>
+            <div class="form-group position-relative">
+              <label for="sec-code" class="form-label">CVC</label>
+              <input
+                maxlength="3"
+                minlength="3"
+                type="text"
+                name="cvc"
+                id="sec-code"
+                placeholder=" e.g. 123"
+                class="form-control form-control-lg"
+              />
+            </div>
+          </div>
+          <button
+            class="btn btn-dark btn-lg mt-4 my-1 my-md-0 mt-md-2"
+            type="submit"
+            role="button"
+          >
+            Confirm
+          </button>
+        </form>
+      </section>
+    </main>
+    <footer>
+      <div class="attribution">
+        Challenge by
+        <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+          >Frontend Mentor</a
+        >. Coded by
+        <a href="https://www.frontendmentor.io/profile/Ed-Mo1">Eyad Muhammad</a
+        >.
+      </div>
+    </footer>
+    <script src="./src/scrollreveal.min.js"></script>
+    <script src="./src/index.js"></script>
+  </body>
+</html>
